@@ -3,6 +3,4 @@
 
 #### Сравнение плоского JSON
 
-для запуска игры наберите brain-calc
-
 [![JSON-diff](https://asciinema.org/a/nRrT1lVlhdrIYHNhxX8eoC8dq.svg)](https://asciinema.org/a/nRrT1lVlhdrIYHNhxX8eoC8dq)
