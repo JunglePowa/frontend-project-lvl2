@@ -1,21 +1,20 @@
 import fs from 'fs';
 import _ from 'lodash';
+import { parse } from '../src/parsers.js'
 
 export const genDiff = (path1, path2) => {
-    const filePath1 = fs.readFileSync(path1, 'utf-8');
-    const filePath2 = fs.readFileSync(path2, 'utf-8');
-    const json1 = JSON.parse(filePath1);
-    const json2 = JSON.parse(filePath2);
-    return compareFiles(json1, json2);
+    const fileParse1 = parse(path1);
+    const fileParse2 = parse(path2);
+    return compareFiles(fileParse1, fileParse2);
 }
 
 const compareFiles = (data1, data2) => {
     const keys1 = _.keys(data1);
     const keys2 = _.keys(data2);
     const allKeys = _.union(keys1, keys2);
-    const tempArr = [...allKeys];
+    const keysArr = [...allKeys];
     let diffStirng = '';
-    tempArr.sort().map((key) => {
+    keysArr.sort().map((key) => {
       if (!_.has(data1, key)) {
         return diffStirng += `  + ${key}: ${data2[key]}\n`;
       }

@@ -7,3 +7,7 @@
 #### Сравнение плоского JSON
 
 [![JSON-diff](https://asciinema.org/a/nRrT1lVlhdrIYHNhxX8eoC8dq.svg)](https://asciinema.org/a/nRrT1lVlhdrIYHNhxX8eoC8dq)
+
+#### Сравнение плоского YAML
+
+[![YAML-diff](https://asciinema.org/a/aRrbXPlI2O7Q0ru0xIB61VoFx.svg)](https://asciinema.org/a/aRrbXPlI2O7Q0ru0xIB61VoFx)
