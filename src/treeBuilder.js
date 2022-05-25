@@ -23,7 +23,7 @@ const makeTree = (data1, data2) => {
       if (data1[key] === data2[key]) {
         return { name : key, value : data1[key], type : 'unchanged' }
       }
-      if (typeof data1[key] === 'object' && typeof data2[key] === 'object') {
+      if (_.isPlainObject(data1[key]) && _.isPlainObject(data2[key])) {
         return {
           name: key,
           type: 'object',
