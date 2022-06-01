@@ -11,3 +11,6 @@
 #### Сравнение плоского YAML
 
 [![YAML-diff](https://asciinema.org/a/aRrbXPlI2O7Q0ru0xIB61VoFx.svg)](https://asciinema.org/a/aRrbXPlI2O7Q0ru0xIB61VoFx)
+
+#### Сравнение вложенных JSON & YAML
+[![JSON_YAML](https://asciinema.org/a/LZKmeWdfCKGcqKOJLmS2a0GhX.svg)](https://asciinema.org/a/LZKmeWdfCKGcqKOJLmS2a0GhX)
