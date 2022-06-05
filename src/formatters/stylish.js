@@ -42,6 +42,8 @@ const stringify = (value, spaces) => {
             case 'unchanged' : {
                 return `\n${indent}  ${name}: ${stringify(value, spaces)}`;
             }
+            default:
+                throw new Error('Uknow data type');
         }
      })
      

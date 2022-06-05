@@ -28,9 +28,14 @@ const getValue = (value) => {
             }
             case 'changed' : {
                 return `Property '${path}' was updated. From ${getValue(beforeValue)} to ${getValue(afterValue)}\n`;
-            } 
+            }
+            case 'unchanged' : {
+                return '';
+
+            }
+            default:
+                throw new Error('Uknow data type');
         }
-        return '';
      }
      
     return iter(tree, '');
