@@ -38,8 +38,7 @@ const makeTree = (data1, data2) => {
           type : 'unchanged', 
         };
     })
-
-    return tree
+    return tree;
   }
 
   export default makeTree;

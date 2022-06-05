@@ -12,8 +12,11 @@
 
 [![YAML-diff](https://asciinema.org/a/aRrbXPlI2O7Q0ru0xIB61VoFx.svg)](https://asciinema.org/a/aRrbXPlI2O7Q0ru0xIB61VoFx)
 
-#### Сравнение вложенных JSON & YAML
+#### Сравнение JSON & YAML вложенный вывод
 [![JSON_YAML](https://asciinema.org/a/LZKmeWdfCKGcqKOJLmS2a0GhX.svg)](https://asciinema.org/a/LZKmeWdfCKGcqKOJLmS2a0GhX)
 
-#### Сравнение плоских JSON & YAML
+#### Сравнение JSON & YAML плоский вывод
 [![JSON_YAML_PLAIN](https://asciinema.org/a/r0MfWaLpOTA2opMaTqgMdB30B.svg)](https://asciinema.org/a/r0MfWaLpOTA2opMaTqgMdB30B)
+
+#### Представление в JSON
+[![JSON](https://asciinema.org/a/LMXNJf7Fuo2AK6VI2JNODWpUiB.svg)](https://asciinema.org/a/LMXNJf7Fuo2AK6VI2JNODWpUi)
