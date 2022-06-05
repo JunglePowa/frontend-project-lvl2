@@ -1,5 +1,4 @@
-import _ from 'lodash';
-import { parse } from './parsers.js';
+import parse from './parsers.js';
 import makeTree from './treeBuilder.js';
 import getFormater from './formatters/index.js';
 
