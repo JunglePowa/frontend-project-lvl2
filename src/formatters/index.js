@@ -1,13 +1,15 @@
-import stylish from "./stylish.js";
-import plain from "./plain.js";
-import json from "./json.js";
+import stylish from './stylish.js';
+import plain from './plain.js';
+import json from './json.js';
 
-export const getFormater = (tree, format) => {
-    if (format === 'plain') {
-        return plain(tree);
-    }
-    if (format === 'json') {
-        return json(tree);
-    }
-    return stylish(tree);
-}
+const getFormater = (tree, format) => {
+  if (format === 'plain') {
+    return plain(tree);
+  }
+  if (format === 'json') {
+    return json(tree);
+  }
+  return stylish(tree);
+};
+
+export default getFormater;
