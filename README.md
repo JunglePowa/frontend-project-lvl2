@@ -19,4 +19,4 @@
 [![JSON_YAML_PLAIN](https://asciinema.org/a/r0MfWaLpOTA2opMaTqgMdB30B.svg)](https://asciinema.org/a/r0MfWaLpOTA2opMaTqgMdB30B)
 
 #### Представление в JSON
-[![JSON](https://asciinema.org/a/LMXNJf7Fuo2AK6VI2JNODWpUiB.svg)](https://asciinema.org/a/LMXNJf7Fuo2AK6VI2JNODWpUi)
+[![JSON](https://asciinema.org/a/LMXNJf7Fuo2AK6VI2JNODWpUi.svg)](https://asciinema.org/a/LMXNJf7Fuo2AK6VI2JNODWpUi)
