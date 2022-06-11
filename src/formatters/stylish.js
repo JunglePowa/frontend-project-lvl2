@@ -49,5 +49,4 @@ const stylish = (tree) => {
   return `{${iter(tree).join('')}\n}`;
 };
 
-
 export default stylish;
