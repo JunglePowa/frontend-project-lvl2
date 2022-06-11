@@ -13,7 +13,7 @@ const getValue = (value) => {
 const render = (tree) => {
   const iter = (data, keyName) => {
     const {
-      name, type, children, value, beforeValue, afterValue,
+      name, type, children, value, value1, value2,
     } = data;
     const path = `${keyName}${name}`;
 
@@ -28,7 +28,7 @@ const render = (tree) => {
         return `${children.map((item) => iter(item, `${path}.`)).join('')}`;
       }
       case 'changed': {
-        return `Property '${path}' was updated. From ${getValue(beforeValue)} to ${getValue(afterValue)}\n`;
+        return `Property '${path}' was updated. From ${getValue(value1)} to ${getValue(value2)}\n`;
       }
       case 'unchanged': {
         return '';

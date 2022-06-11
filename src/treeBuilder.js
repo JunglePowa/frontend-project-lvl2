@@ -29,8 +29,8 @@ const makeTree = (data1, data2) => {
       return {
         name: key,
         type: 'changed',
-        beforeValue: data1[key],
-        afterValue: data2[key],
+        value1: data1[key],
+        value2: data2[key],
       };
     }
 

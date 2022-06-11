@@ -6,15 +6,15 @@
   "type": "module",
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/JunglePowa/frontend-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/JunglePowa/frontend-project-lvl2/actions)",
-  "main": "src/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
+  "main": "index.js",
+   "repository": {
     "type": "git",
     "url": "git+https://github.com/JunglePowa/frontend-project-lvl2.git"
   },
-  "author": "",
+  "scripts": {
+    "test": "npx jest"
+  },
+  "author": "JunglePowa",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/JunglePowa/frontend-project-lvl2/issues"

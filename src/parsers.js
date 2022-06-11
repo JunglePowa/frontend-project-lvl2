@@ -1,15 +1,15 @@
-import * as path from 'path';
-import fs from 'fs';
 import yaml from 'js-yaml';
-
-const parse = (filePath) => {
-  if (path.extname(filePath) === '.json') {
-    return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-  }
-  if (path.extname(filePath) === '.yml' || path.extname(filePath) === '.yaml') {
-    return yaml.load(fs.readFileSync(filePath, 'utf-8'));
-  }
-  return filePath;
+//получает на вход объект с данными файла и типом данных
+const parse = (fileData) => {
+    if (fileData.type === '.json') {
+        const data = fileData.data;
+        return JSON.parse(data);
+    }
+    if (fileData.type === '.yml' || fileData.type === '.yaml') {
+        const data = fileData.data;
+        return yaml.load(data);
+    }
+    
 };
 
 export default parse;
