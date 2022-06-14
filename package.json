@@ -12,7 +12,11 @@
     "url": "git+https://github.com/JunglePowa/frontend-project-lvl2.git"
   },
   "scripts": {
-    "test": "npx jest"
+    "test": "npx -n --experimental-vm-modules jest"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "transform": {}
   },
   "author": "JunglePowa",
   "license": "ISC",
