@@ -1,0 +1,29 @@
+name: Github actions
+
+on:
+  - push
+  - pull_request
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+
+      - name: Make install dependencies
+        run: make install
+        env:
+          CI: true
+
+      - name: Run linter
+        run: make lint
+
+      - name: Tests & publish code coverage
+        uses: paambaati/codeclimate-action@v2.7.4
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+        with:
+          coverageCommand: make test-coverage
+          debug: true
