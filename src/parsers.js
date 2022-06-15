@@ -1,15 +1,13 @@
 import yaml from 'js-yaml';
 // получает на вход объект с данными файла и типом данных
-const parse = (fileData) => {
-  if (fileData.type === '.json') {
-    const { data } = fileData;
-    return JSON.parse(data);
+const parse = (fileData, type) => {
+  if (type === 'json') {
+    return JSON.parse(fileData);
   }
-  if (fileData.type === '.yml' || fileData.type === '.yaml') {
-    const { data } = fileData;
-    return yaml.load(data);
+  if (type === 'yml' || type === 'yaml') {
+    return yaml.load(fileData);
   }
-  return fileData;
+  throw new Error('Uknow data type');
 };
 
 export default parse;
