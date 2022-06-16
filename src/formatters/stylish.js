@@ -3,7 +3,7 @@ import _ from 'lodash';
 const makeTab = (depth, spaces = 4) => {
   const space = ' ';
   return space.repeat(depth * spaces - 2);
-}
+};
 
 const stringify = (value, depth) => {
   const indent = makeTab(depth, 4);
