@@ -1,5 +1,5 @@
 import yaml from 'js-yaml';
-// получает на вход объект с данными файла и типом данных
+
 const parse = (fileData, type) => {
   if (type === 'json') {
     return JSON.parse(fileData);

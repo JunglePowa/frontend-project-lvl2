@@ -14,10 +14,6 @@
   "scripts": {
     "test": "npx jest"
   },
-  "jest": {
-    "testEnvironment": "node",
-    "transform": {}
-  },
   "author": "JunglePowa",
   "license": "ISC",
   "bugs": {
