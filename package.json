@@ -14,7 +14,7 @@
   "scripts": {
     "test": "npx jest"
   },
-  "author": "JunglePowa",
+  "author": "Yaroslav S",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/JunglePowa/frontend-project-lvl2/issues"
