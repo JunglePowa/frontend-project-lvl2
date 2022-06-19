@@ -5,19 +5,20 @@ import makeTree from './treeBuilder.js';
 import getFormater from './formatters/index.js';
 
 const getFileData = (filePath) => {
-  const absolutePath = path.resolve(process.cwd(), '__fixtures__', filePath);
+  const absolutePath = path.resolve(process.cwd(), filePath);
   return fs.readFileSync(absolutePath, 'utf-8');
 };
 
-const getFileType = (filePath) => path.extname(filePath).slice(1);
+const getType = (filePath) => path.extname(filePath).slice(1);
+
 const genDiff = (path1, path2, format = 'stylish') => {
-  const fileData1 = getFileData(path1);
-  const fileData2 = getFileData(path2);
-  const fileType1 = getFileType(path1);
-  const fileType2 = getFileType(path2);
-  const fileParse1 = parse(fileData1, fileType1);
-  const fileParse2 = parse(fileData2, fileType2);
-  const tree = makeTree(fileParse1, fileParse2);
+  const data1 = getFileData(path1);
+  const data2 = getFileData(path2);
+  const type1 = getType(path1);
+  const type2 = getType(path2);
+  const parse1 = parse(data1, type1);
+  const parse2 = parse(data2, type2);
+  const tree = makeTree(parse1, parse2);
   return getFormater(tree, format);
 };
 

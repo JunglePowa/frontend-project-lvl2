@@ -10,39 +10,33 @@ const getValue = (value) => {
   return value;
 };
 
-const render = (tree) => {
-  const iter = (data, keyName) => {
-    const {
+const plain = (tree) => {
+  const iter = (data, keyName) => data
+    .filter(({ type }) => type !== 'unchanged')
+    .map(({
       name, type, children, value, value1, value2,
-    } = data;
-    const path = `${keyName}${name}`;
+    }) => {
+      const path = `${keyName}${name}`;
 
-    switch (type) {
-      case 'added': {
-        return `Property '${path}' was added with value: ${getValue(value)}\n`;
+      switch (type) {
+        case 'added': {
+          return `Property '${path}' was added with value: ${getValue(value)}`;
+        }
+        case 'deleted': {
+          return `Property '${path}' was removed`;
+        }
+        case 'changed': {
+          return `Property '${path}' was updated. From ${getValue(value1)} to ${getValue(value2)}`;
+        }
+        case 'nested': {
+          return iter(children, `${path}.`);
+        }
+        default:
+          throw new Error('Unknow data type');
       }
-      case 'deleted': {
-        return `Property '${path}' was removed\n`;
-      }
-      case 'nested': {
-        return `${children.map((item) => iter(item, `${path}.`)).join('')}`;
-      }
-      case 'changed': {
-        return `Property '${path}' was updated. From ${getValue(value1)} to ${getValue(value2)}\n`;
-      }
-      case 'unchanged': {
-        return '';
-      }
-      default:
-        throw new Error('Uknow data type');
-    }
-  };
+    }).join('\n');
 
-  return iter(tree, '');
+  return iter(tree, []);
 };
 
-const plain = (data) => {
-  const result = data.map((item) => render(item)).join('');
-  return result.trim();
-};
 export default plain;

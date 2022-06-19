@@ -16,11 +16,11 @@ const stringify = (value, depth) => {
   const entries = _.keys(value);
   const nestedValue = entries.map((key) => {
     if (_.isObject(value[key])) {
-      return `${indent}  ${key}: ${stringify(value[key], depth + 1)}\n`;
+      return `${indent}  ${key}: ${stringify(value[key], depth + 1)}`;
     }
-    return `  ${indent}${key}: ${value[key]}\n`;
+    return `  ${indent}${key}: ${value[key]}`;
   });
-  return `{\n${nestedValue.join('')}  ${indentClose}}`;
+  return ['{', ...nestedValue, `${indentClose}  }`].join('\n');
 };
 
 const stylish = (tree) => {
@@ -31,26 +31,26 @@ const stylish = (tree) => {
     const indent = makeTab(depth);
     switch (type) {
       case 'added': {
-        return `\n${indent}+ ${name}: ${stringify(value, depth + 1)}`;
+        return `${indent}+ ${name}: ${stringify(value, depth + 1)}`;
       }
       case 'deleted': {
-        return `\n${indent}- ${name}: ${stringify(value, depth + 1)}`;
+        return `${indent}- ${name}: ${stringify(value, depth + 1)}`;
       }
       case 'nested': {
-        return `\n${indent}  ${name}: {${iter(children, depth + 1).join('')}\n  ${indent}}`;
+        return `${indent}  ${name}: {\n${iter(children, depth + 1).join('\n')}\n${indent}  }`;
       }
       case 'changed': {
-        return `\n${indent}- ${name}: ${stringify(value1, depth + 1)}\n${indent}+ ${name}: ${stringify(value2, depth + 1)}`;
+        return `${indent}- ${name}: ${stringify(value1, depth + 1)}\n${indent}+ ${name}: ${stringify(value2, depth + 1)}`;
       }
       case 'unchanged': {
-        return `\n${indent}  ${name}: ${stringify(value, depth + 1)}`;
+        return `${indent}  ${name}: ${stringify(value, depth + 1)}`;
       }
       default:
-        throw new Error('Uknow data type');
+        throw new Error('Unknown data type');
     }
   });
 
-  return `{${iter(tree, 1).join('')}\n}`;
+  return `{\n${iter(tree, 1).join('\n')}\n}`;
 };
 
 export default stylish;
